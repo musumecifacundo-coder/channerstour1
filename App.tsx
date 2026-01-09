@@ -9,7 +9,6 @@ import { Gallery } from './components/Gallery';
 import { Reviews } from './components/Reviews';
 import { Enquiry } from './components/Enquiry';
 import { Footer } from './components/Footer';
-import { LiveChat } from './components/LiveChat';
 import { PackagePromo } from './components/PackagePromo';
 import { Packages } from './components/Packages';
 import { TrustIndicators } from './components/TrustIndicators';
@@ -57,7 +56,6 @@ const App: React.FC = () => {
       </main>
       
       <Footer />
-      <LiveChat />
     </div>
   );
 };

@@ -127,7 +127,7 @@ export const Enquiry: React.FC = () => {
       `My Email: ${formData.email}`
     );
 
-    return `mailto:facu.ai.musumeci@gmail.com?subject=${subject}&body=${body}`;
+    return `mailto:ask@channersonnorfolk.com?subject=${subject}&body=${body}`;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -139,8 +139,14 @@ export const Enquiry: React.FC = () => {
       : 'Dates not selected';
 
     // CONFIGURATION FOR WEB3FORMS
-    // Integrated Access Key
-    const ACCESS_KEY = '32a1743c-eb23-4a1b-88d3-c0079be2b3ba'; 
+    // SECURE: Access Key obtained from environment variables
+    const ACCESS_KEY = process.env.REACT_APP_WEB3FORMS_ACCESS_KEY; 
+
+    if (!ACCESS_KEY) {
+        console.error("Web3Forms Access Key is missing in environment variables.");
+        setStatus('error');
+        return;
+    }
 
     const submissionData = {
       access_key: ACCESS_KEY,
